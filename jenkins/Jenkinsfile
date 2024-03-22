@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+        label 'master' // or any other label where Jenkins has access to the Kubernetes CLI
+    }
+    environment {
+        KUBECONFIG = '/var/jenkins_home/.kube/config' // Path to your Kubernetes config file
+    }
+    stages {        
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    def kubeConfig = readFile('/var/jenkins_home/.kube/config')
+                    withKubeConfig([credentialsId: 'your-kubernetes-credentials-id', kubeconfigContent: kubeConfig]) {
+                        sh 'kubectl apply -f path/to/your/kubernetes/manifests' // Apply Kubernetes manifests
+                    }
+                }
+            }
+        }
+    }
+}

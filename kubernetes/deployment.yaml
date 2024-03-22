@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo-app-server
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: demo-app-server
+  template:
+    metadata:
+      labels:
+        app: demo-app-server
+    spec:
+      containers:
+      - name: demo-app-server
+        image: crccheck/hello-world:latest
+        ports: 
+        - containerPort: 8000
