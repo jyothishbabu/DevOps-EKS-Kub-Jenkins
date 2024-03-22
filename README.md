@@ -16,8 +16,8 @@ To get started with this project, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone <repository_url>
-cd <repository_name>
+git clone https://github.com/jyothishbabu/DevOps-EKS-Kub-Jenkins/
+cd DevOps-EKS-Kub-Jenkins
 ```
 
 2. Set up AWS credentials and configure AWS CLI (if not already done).
@@ -35,7 +35,8 @@ cd <repository_name>
 
 - `kubernetes`: This folder contains Kubernetes manifest files (e.g., Deployment.yaml, Service.yaml, Ingress.yaml) for deploying applications on Kubernetes clusters.
 
-- `terraform`: This folder contains Terraform configuration files (e.g., main.tf, variables.tf) for provisioning AWS resources such as VPC, EKS cluster, security groups, etc.
+- `terraform`: This folder contains Terraform configuration files (e.g., main.tf, variables.tf) for provisioning AWS resources such as VPC, EKS cluster, security groups, etc.Please update the S3 bucket for the sate file configurqation.
+
 
 - `scripts`: This folder contains bash scripts (e.g., setup.sh, deploy.sh, cleanup.sh) for automating tasks such as resource setup, deployment, cleanup, etc.
 
